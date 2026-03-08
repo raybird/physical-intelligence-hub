@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-size="medium">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Physical Intelligence Hub - 實體世界智庫</title>
+    <style>
+        :root {
+            --primary: #ffd700;
+            --bg: #0f1115;
+            --card-bg: #1a1d23;
+            --text: #e0e0e0;
+        }
+        html[data-size="small"] { font-size: 14px; }
+        html[data-size="medium"] { font-size: 16px; }
+        html[data-size="large"] { font-size: 20px; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: "Georgia", serif;
+            margin: 0; padding: 1.5rem; line-height: 1.6; transition: font-size 0.2s ease;
+        }
+        .container { max-width: 650px; margin: 0 auto; }
+        header { 
+            border-bottom: 2px solid var(--primary); 
+            padding-bottom: 1.5rem; margin-bottom: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        h1 { color: var(--primary); font-size: 1.6rem; margin: 0; letter-spacing: 1px; font-weight: 900; }
+        
+        .font-switcher { display: flex; gap: 5px; background: #222; padding: 4px; border-radius: 8px; }
+        .font-btn { background: none; border: none; color: #888; padding: 4px 10px; cursor: pointer; border-radius: 4px; font-weight: bold; }
+        .font-btn.active { background: var(--primary); color: #000; }
+
+        .module-grid { display: grid; gap: 1.5rem; }
+        .module-card {
+            background: var(--card-bg); border: 1px solid #333; border-radius: 4px;
+            padding: 1.5rem; transition: transform 0.2s; position: relative;
+        }
+        .module-card:hover { transform: translateY(-3px); border-color: var(--primary); }
+        .module-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+        .module-desc { font-size: 0.9rem; color: #aaa; margin-bottom: 1rem; }
+        .status-dot { width: 8px; height: 8px; background: #32d74b; border-radius: 50%; display: inline-block; margin-right: 6px; }
+        
+        .btn-link {
+            display: inline-block; padding: 6px 16px; background: var(--primary); color: #000;
+            text-decoration: none; border-radius: 2px; font-weight: 700; font-size: 0.85rem;
+        }
+        
+        footer { text-align: center; color: #555; font-size: 0.75rem; margin-top: 4rem; border-top: 1px solid #222; padding-top: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PHYSICAL INTEL HUB</h1>
+            <div class="font-switcher">
+                <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
+                <button class="font-btn active" onclick="setFontSize('medium')" id="btn-medium">M</button>
+                <button class="font-btn" onclick="setFontSize('large')" id="btn-large">L</button>
+            </div>
+        </header>
+
+        <div class="module-grid">
+            <!-- 供應鏈模組 -->
+            <div class="module-card">
+                <div class="module-title">📦 全球供應鏈與物流</div>
+                <div class="module-desc">追蹤波羅的海指數、原材料報價與主要港口運力預警。</div>
+                <div style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">
+                    <span class="status-dot"></span>已連線至國際物流網關
+                </div>
+                <a href="./supply-chain/" class="btn-link">查看深度公報</a>
+            </div>
+
+            <!-- 房地產模組 -->
+            <div class="module-card">
+                <div class="module-title">🏛️ 房地產與都市計畫</div>
+                <div class="module-desc">監控政府土地標案、都市計畫變更及科學園區開發進度。</div>
+                <div style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">
+                    <span class="status-dot" style="background: #888;"></span>待初始化排程
+                </div>
+                <a href="#" class="btn-link" style="background: #333; color: #666;">即將上線</a>
+            </div>
+
+            <!-- 高端收藏品模組 -->
+            <div class="module-card">
+                <div class="module-title">⌚ 高端收藏品市場</div>
+                <div class="module-desc">全球高端腕錶成交價監測、拍賣行趨勢與資產保值率分析。</div>
+                <div style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">
+                    <span class="status-dot" style="background: #888;"></span>待資料源對接
+                </div>
+                <a href="#" class="btn-link" style="background: #333; color: #666;">即將上線</a>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 Raybird. 實體世界情報由 TeleNexus AI 代理採集。
+        </footer>
+    </div>
+
+    <script>
+        function setFontSize(size) {
+            document.documentElement.setAttribute('data-size', size);
+            localStorage.setItem('phys-font-size', size);
+            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + size).classList.add('active');
+        }
+        const savedSize = localStorage.getItem('phys-font-size') || 'medium';
+        setFontSize(savedSize);
+    </script>
+</body>
+</html>
