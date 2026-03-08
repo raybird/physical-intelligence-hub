@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-size="medium">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貴金屬與避險資產公報 - Physical Intel Hub</title>
+    <style>
+        :root { --primary: #ffd700; --bg: #0f1115; --card-bg: #1a1d23; --text: #e0e0e0; }
+        html[data-size="small"] { font-size: 14px; }
+        html[data-size="medium"] { font-size: 16px; }
+        html[data-size="large"] { font-size: 20px; }
+        body { background-color: var(--bg); color: var(--text); font-family: "Georgia", serif; margin: 0; padding: 1.5rem; line-height: 1.6; }
+        .container { max-width: 650px; margin: 0 auto; }
+        header { border-bottom: 1px solid #333; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .back-link { color: var(--primary); text-decoration: none; font-size: 0.8rem; margin-bottom: 1rem; display: block; }
+        h1 { color: #fff; font-size: 1.4rem; margin: 0; }
+        .report-meta { font-size: 0.75rem; color: #666; margin-top: 5px; }
+        
+        .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+        .price-card { background: #16161a; padding: 1.2rem; border-radius: 4px; border: 1px solid #222; text-align: center; }
+        .metal-name { font-size: 0.7rem; color: #888; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
+        .metal-price { font-size: 1.5rem; color: var(--primary); font-weight: 900; margin: 5px 0; }
+        .metal-change { font-size: 0.8rem; color: #32d74b; font-weight: 700; }
+        
+        .briefing { background: #1a1a1e; padding: 1.5rem; border-left: 3px solid var(--primary); font-size: 0.95rem; margin-top: 2rem; }
+        footer { text-align: center; color: #444; font-size: 0.7rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← 返回智庫中心</a>
+        <header>
+            <h1>✨ 貴金屬與避險資產深度公報</h1>
+            <div class="report-meta">發布時間：2026-03-08 16:45 (Taipei) | 編號：PM-20260308-01</div>
+        </header>
+
+        <div style="font-size: 1.1rem; color: #fff; font-weight: 700;">全球避險情緒升溫：黃金挺進 $5,100 時代</div>
+        
+        <div class="price-grid">
+            <div class="price-card">
+                <div class="metal-name">黃金 (Gold Spot)</div>
+                <div class="metal-price">$5,174.20</div>
+                <div class="metal-change">▲ +1.69%</div>
+            </div>
+            <div class="price-card">
+                <div class="metal-name">白銀 (Silver Spot)</div>
+                <div class="metal-price">$85.12</div>
+                <div class="metal-change">▲ +0.85%</div>
+            </div>
+        </div>
+
+        <p>受中東地緣政治危機加劇影響，避險資金瘋狂湧入大宗商品市場。黃金作為「最終避險手段」的需求已達到歷史高點，儘管美金強勢競爭，但實體資產的吸引力在通膨壓力下仍顯著佔優。</p>
+
+        <div class="briefing">
+            <strong>智庫核心觀察：</strong>
+            <p>1. <strong>地緣溢價</strong>：當前金價包含約 15-20% 的戰爭溢價。若局勢未能緩解，下一個心理關口將落於 $5,400。</p>
+            <p>2. <strong>金銀比觀察</strong>：白銀目前展現出強大的工業修復屬性，特別是在 AI 硬體製造與綠能供應鏈中的角色，使其在避險之餘具備更強的反彈張力。</p>
+            <p>3. <strong>避險資產配比</strong>：建議觀察「數位黃金 (BTC)」與「實體黃金」的連動。近期兩者同步走強，顯示市場正進行全方位的風險規避（Risk-Off）。</p>
+        </div>
+
+        <footer>
+            &copy; 2026 Raybird. 實體世界情報由 TeleNexus AI 代理採集。
+        </footer>
+    </div>
+    <script>
+        const savedSize = localStorage.getItem('phys-font-size') || 'medium';
+        document.documentElement.setAttribute('data-size', savedSize);
+    </script>
+</body>
+</html>
