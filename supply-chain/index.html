@@ -3,120 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>供應鏈與全球物流公報 - Physical Intel Hub</title>
+    <title>Supply Chain Report - 全球供應鏈與物流公報</title>
     <style>
         :root {
-            --primary: #32d74b; /* 物流站專屬：環保綠 */
+            --primary: #00d4ff;
             --bg: #0a0a0c;
-            --card-bg: #16161a;
-            --text: #e0e0e0;
-            --warning: #ff9f0a;
-            --danger: #ff453a;
+            --card-bg: #16181d;
+            --text: #ffffff;
         }
         html[data-size="small"] { font-size: 14px; }
         html[data-size="medium"] { font-size: 16px; }
-        html[data-size="large"] { font-size: 18px; }
+        html[data-size="large"] { font-size: 20px; }
 
         body {
             background-color: var(--bg);
             color: var(--text);
             font-family: -apple-system, system-ui, sans-serif;
-            margin: 0; padding: 1.5rem; line-height: 1.5; transition: font-size 0.2s ease;
+            margin: 0; padding: 1.5rem; line-height: 1.6;
         }
-        .container { max-width: 650px; margin: 0 auto; }
+        .container { max-width: 600px; margin: 0 auto; }
         header { 
-            border-bottom: 2px solid var(--primary); padding-bottom: 1rem; margin-bottom: 2rem;
+            border-bottom: 1px solid #333; padding-bottom: 1rem; margin-bottom: 2rem;
             display: flex; justify-content: space-between; align-items: center;
         }
-        h1 { color: var(--primary); font-size: 1.4rem; margin: 0; letter-spacing: 1px; }
-        .timestamp { font-size: 0.75rem; color: #666; text-align: center; margin-bottom: 1.5rem; }
-
-        .font-switcher { display: flex; gap: 5px; background: #1a1a1e; padding: 4px; border-radius: 8px; border: 1px solid #333; }
-        .font-btn { background: none; border: none; color: #666; padding: 4px 8px; cursor: pointer; border-radius: 4px; font-weight: bold; }
-        .font-btn.active { background: var(--primary); color: #000; }
-
-        .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
-        .metric-card {
-            background: var(--card-bg); border: 1px solid #222; border-radius: 12px;
-            padding: 1.2rem; border-top: 4px solid var(--primary);
+        h1 { color: var(--primary); font-size: 1.2rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+        .stat-card {
+            background: var(--card-bg); padding: 1.2rem; border-radius: 8px; border: 1px solid #222;
         }
-        .metric-label { font-size: 0.7rem; color: #666; text-transform: uppercase; }
-        .metric-value { font-size: 1.5rem; font-weight: 800; color: #fff; margin: 5px 0; display: block; }
-        .metric-change { font-size: 0.8rem; font-weight: 600; }
+        .stat-label { font-size: 0.75rem; color: #888; text-transform: uppercase; }
+        .stat-value { font-size: 1.5rem; font-weight: 800; margin: 5px 0; color: #fff; }
+        .stat-change { font-size: 0.8rem; font-weight: 700; color: #ff453a; }
 
-        .warning-box {
-            background: rgba(255, 69, 58, 0.05); border: 1px solid var(--danger);
-            padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        .analysis-box {
+            background: rgba(0, 212, 255, 0.03); border-left: 4px solid var(--primary);
+            padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2rem;
         }
-        .warning-title { color: var(--danger); font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .analysis-title { font-size: 0.9rem; font-weight: 800; color: var(--primary); margin-bottom: 0.8rem; text-transform: uppercase; }
+        .analysis-content { font-size: 0.95rem; color: #ccc; }
 
-        .nav-links { text-align: center; margin-bottom: 2rem; }
-        .nav-links a { color: var(--primary); text-decoration: none; font-size: 0.8rem; margin: 0 10px; }
+        .warning-tag {
+            background: rgba(255, 69, 58, 0.1); color: #ff453a;
+            padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 1rem;
+        }
 
-        footer { text-align: center; font-size: 0.75rem; color: #444; margin-top: 4rem; padding-bottom: 2rem; }
+        footer { text-align: center; color: #444; font-size: 0.75rem; margin-top: 4rem; }
+        .back-link { color: var(--primary); text-decoration: none; font-size: 0.8rem; margin-bottom: 1rem; display: inline-block; }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="../" class="back-link">← 返回智庫中心</a>
         <header>
-            <h1>SUPPLY CHAIN INTEL</h1>
-            <div class="font-switcher">
-                <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
-                <button class="font-btn active" onclick="setFontSize('medium')" id="btn-medium">M</button>
-                <button class="font-btn" onclick="setFontSize('large')" id="btn-large">L</button>
-            </div>
+            <h1>SUPPLY CHAIN</h1>
+            <div style="font-size: 0.7rem; color: #666;">最後更新：2026-03-11 15:30 (Taipei)</div>
         </header>
 
-        <div class="nav-links">
-            <a href="https://raybird.github.io/telenexus-insight-hub/">← 指揮中心</a>
-            <a href="archives/">📚 歷史物流智庫</a>
-        </div>
-
-        <div class="timestamp">川普訊號與油價跳水 | 實體週轉率監控 | 2026-03-11 09:30 (Taipei)</div>
-
-        <div class="metric-grid">
-            <div class="metric-card">
-                <span class="metric-label">BDI 指數</span>
-                <span class="metric-value">2,066</span>
-                <span class="metric-change" style="color: var(--primary);">+2.8% (反彈)</span>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-label">BDI INDEX</div>
+                <div class="stat-value">1,919</div>
+                <div class="stat-change">▼ -7.12%</div>
             </div>
-            <div class="metric-card" style="border-top-color: var(--warning);">
-                <span class="metric-label">布蘭特原油 (Brent)</span>
-                <span class="metric-value">$89.80</span>
-                <span class="metric-change" style="color: var(--danger);">-8.0% (大跌)</span>
+            <div class="stat-card">
+                <div class="stat-label">BRENT OIL</div>
+                <div class="stat-value">$87.23</div>
+                <div class="stat-change">▼ 下跌回落</div>
             </div>
         </div>
 
-        <div class="warning-box">
-            <div class="warning-title">⚠️ 霍爾木茲海峽：電子干擾與通行驟降</div>
-            <div style="font-size: 0.9rem; color: #ccc;">
-                目前的戰爭狀態導致該海峽通行量下降 95%。出現嚴重的 GPS 欺騙，船隻被迫將 AIS 數據更改為「中國船東」以求避險。約 1,000 艘船隻滯留，全球能源供應鏈仍處於極端脆弱狀態。
+        <div class="analysis-box">
+            <div class="analysis-title">物流與成本預警</div>
+            <div class="analysis-content">
+                【航運冰封預警】BDI 指數出現劇烈回撤，創下單日 7.12% 的驚人跌幅，海岬型船運費暴跌 11%。這顯示荷姆茲海峽的長期封鎖已從「預期恐慌」轉向「需求萎縮」的實體規訓。油價雖然受 IEA 釋放儲油影響回落至 $87 區間，但物流路徑的受阻將導致終端成本出現滯後性噴發。系統判定，目前處於「高運費、低週轉」的物流高壓區。
             </div>
         </div>
 
-        <div class="sentiment-card" style="background: var(--card-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid #222;">
-            <div style="font-weight: 700; color: var(--primary); margin-bottom: 10px;">🧠 AI 運營深度分析</div>
-            <div style="font-size: 0.9rem; line-height: 1.6;">
-                今日物流市場經歷了「恐慌溢價」的快速消退。川普關於「戰爭很快結束」的言論成功將油價從 $120 壓回至 $92 區間。然而，BDI 的反彈顯示實體物資的週轉需求依然強勁。**運營預警：** 儘管能源價格下跌減輕了通膨壓力，但霍爾木茲海峽的實體堵塞將導致長期物流成本的結構性抬升。
-            </div>
+        <div class="warning-tag">🚨 物流成本預警：需求萎縮與路徑受阻並行</div>
+        <div style="font-size: 0.85rem; color: #aaa;">
+            建議供應鏈維運者避開海岬型運輸，轉向靈便型或陸路替代方案。能源紅利可能只是暫時的，補庫存成本依然高企。
         </div>
 
         <footer>
-            &copy; 2026 Raybird & TeleNexus AI<br>
-            Autonomous Supply Chain Monitor v1.1
+            &copy; 2026 Raybird. 供應鏈物流情報由 TeleNexus AI 驅動。
         </footer>
     </div>
-
-    <script>
-        function setFontSize(size) {
-            document.documentElement.setAttribute('data-size', size);
-            localStorage.setItem('sc-font-size', size);
-            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-            const btn = document.getElementById('btn-' + size);
-            if(btn) btn.classList.add('active');
-        }
-        const savedSize = localStorage.getItem('sc-font-size') || 'medium';
-        setFontSize(savedSize);
-    </script>
 </body>
 </html>

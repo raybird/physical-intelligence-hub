@@ -3,121 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>貴金屬與避險資產公報 - Physical Intel Hub</title>
+    <title>Precious Metals Report - 貴金屬與避險公報</title>
     <style>
         :root {
             --primary: #ffd700;
-            --bg: #0f1115;
-            --card-bg: #1a1d23;
-            --text: #e0e0e0;
-            --accent: #00f3ff;
+            --bg: #0a0a0c;
+            --card-bg: #16181d;
+            --text: #ffffff;
+            --secondary: #c0c0c0;
         }
         html[data-size="small"] { font-size: 14px; }
         html[data-size="medium"] { font-size: 16px; }
-        html[data-size="large"] { font-size: 18px; }
+        html[data-size="large"] { font-size: 20px; }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: "Georgia", serif;
-            margin: 0; padding: 1.5rem; line-height: 1.6; transition: font-size 0.2s ease;
+            font-family: -apple-system, system-ui, sans-serif;
+            margin: 0; padding: 1.5rem; line-height: 1.6;
         }
-        .container { max-width: 650px; margin: 0 auto; }
+        .container { max-width: 600px; margin: 0 auto; }
         header { 
-            border-bottom: 2px solid var(--primary); padding-bottom: 1rem; margin-bottom: 2rem;
-            display: flex; justify-content: space-between; align-items: start;
+            border-bottom: 1px solid #333; padding-bottom: 1rem; margin-bottom: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
         }
-        h1 { color: var(--primary); font-size: 1.4rem; margin: 0; letter-spacing: 1px; font-weight: 900; }
-        .timestamp { font-size: 0.75rem; color: #666; margin-top: 5px; }
+        h1 { color: var(--primary); font-size: 1.2rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
         
-        .font-switcher { display: flex; gap: 5px; background: #222; padding: 4px; border-radius: 8px; }
-        .font-btn { background: none; border: none; color: #888; padding: 4px 10px; cursor: pointer; border-radius: 4px; font-weight: bold; }
-        .font-btn.active { background: var(--primary); color: #000; }
-
-        .price-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
-        .price-card { background: var(--card-bg); padding: 1rem; border-radius: 4px; border: 1px solid #333; text-align: center; }
-        .label { font-size: 0.7rem; color: #666; text-transform: uppercase; display: block; }
-        .value { font-size: 1.2rem; font-weight: 800; color: #fff; margin: 5px 0; display: block; }
-        .change { font-size: 0.75rem; font-weight: 600; }
+        .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+        .price-card {
+            background: var(--card-bg); padding: 1.2rem; border-radius: 8px; border: 1px solid #222;
+        }
+        .price-label { font-size: 0.75rem; color: #888; text-transform: uppercase; }
+        .price-value { font-size: 1.5rem; font-weight: 800; margin: 5px 0; color: #fff; }
+        .price-change { font-size: 0.8rem; font-weight: 700; }
+        .positive { color: #32d74b; }
+        .negative { color: #ff453a; }
 
         .analysis-box {
-            background: rgba(0, 243, 255, 0.03); border: 1px solid #1a2030;
-            padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;
+            background: rgba(255, 215, 0, 0.03); border-left: 4px solid var(--primary);
+            padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2rem;
         }
-        .section-title { font-size: 1rem; font-weight: 800; color: var(--primary); margin: 2rem 0 1rem; text-transform: uppercase; }
-        
-        footer { text-align: center; color: #444; font-size: 0.7rem; margin-top: 4rem; }
-        .nav-links { margin-top: 1rem; }
-        .nav-links a { color: var(--primary); text-decoration: none; font-size: 0.8rem; margin-right: 15px; }
+        .analysis-title { font-size: 0.9rem; font-weight: 800; color: var(--primary); margin-bottom: 0.8rem; text-transform: uppercase; }
+        .analysis-content { font-size: 0.95rem; color: #ccc; }
+
+        .warning-tag {
+            background: rgba(255, 69, 58, 0.1); color: #ff453a;
+            padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 1rem;
+        }
+
+        footer { text-align: center; color: #444; font-size: 0.75rem; margin-top: 4rem; }
+        .back-link { color: var(--primary); text-decoration: none; font-size: 0.8rem; margin-bottom: 1rem; display: inline-block; }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="../" class="back-link">← 返回智庫中心</a>
         <header>
-            <div>
-                <h1>✨ 貴金屬與避險資產</h1>
-                <div class="timestamp">最後更新：2026-03-10 21:00 (Taipei)</div>
-            </div>
-            <div class="font-switcher">
-                <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
-                <button class="font-btn active" onclick="setFontSize('medium')" id="btn-medium">M</button>
-                <button class="font-btn" onclick="setFontSize('large')" id="btn-large">L</button>
-            </div>
+            <h1>PRECIOUS METALS</h1>
+            <div style="font-size: 0.7rem; color: #666;">最後更新：2026-03-11 15:30 (Taipei)</div>
         </header>
-
-        <div class="nav-links">
-            <a href="../">← 返回首頁</a>
-            <a href="archives/">📜 歷史避險公報</a>
-        </div>
 
         <div class="price-grid">
             <div class="price-card">
-                <span class="label">黃金 (Gold)</span>
-                <span class="value">$5,185.40</span>
-                <span class="change" style="color: #32d74b;">+0.96%</span>
+                <div class="price-label">GOLD (XAU/USD)</div>
+                <div class="price-value">$5,208.08</div>
+                <div class="price-change positive">▲ +0.3%</div>
             </div>
             <div class="price-card">
-                <span class="label">白銀 (Silver)</span>
-                <span class="value">$88.48</span>
-                <span class="change" style="color: #32d74b;">+1.82%</span>
-            </div>
-            <div class="price-card" style="border-color: var(--accent);">
-                <span class="label" style="color: var(--accent);">BTC (數位黃金)</span>
-                <span class="value">$70,523.19</span>
-                <span class="change" style="color: #32d74b;">+3.04%</span>
+                <div class="price-label">SILVER (XAG/USD)</div>
+                <div class="price-value">$88.35</div>
+                <div class="price-change negative">▼ -0.1%</div>
             </div>
         </div>
 
         <div class="analysis-box">
-            <div class="section-title" style="margin-top: 0;">🛡️ 避險情緒分析：避險主權的「大分歧」</div>
-            <div style="font-size: 0.9rem;">
-                <p>今日 21:00 進入美股盤中交易。隨著地緣政治緊張局勢未見實質性緩解，實體避險資產（黃金、白銀）持續吸引全球防禦性資金。黃金報價推升至 $5,185，白銀則在工業剛需帶動下續創日內新高 $88.48。</p>
-                <p><strong>關鍵觀察：</strong> 市場出現了明顯的情緒「大分歧」。比特幣雖然站穩 $70,000，但其日內波動與美股及科技股的相關性顯著提升，被機構規訓為「高貝塔風險資產」。相較之下，貴金屬則穩固地守護著「純粹避險」的主權邊界。這種脫鉤現象顯示，在極端地緣風險下，實體稀缺資產的信用溢價正超越數位溢價。</p>
+            <div class="analysis-title">避險規訓分析</div>
+            <div class="analysis-content">
+                【實體資產韌性審計】今日黃金維持在 $5,200 以上高檔震盪。儘管能源價格回落緩解了部分避險壓力，但市場對即將公布的美國 CPI 通膨數據仍保持高度警覺。系統判定，在 $5,200 附近的物理強度確認了實體資產在「數位稀缺里程碑（BTC 20M）」達成之際的同步避險價值。白銀在 $88 水位表現穩定，顯示工業需求與避險溢價正處於微妙的平衡期。
             </div>
         </div>
 
-        <div class="section-title">維運建議 (Operator Guidance)</div>
-        <ul style="font-size: 0.85rem; color: #ccc; padding-left: 1.2rem;">
-            <li><strong>避險分層</strong>：建議維運者將「物理避險」與「數位增長」進行分層配置。目前環境下，實體金銀是抵禦地緣政治突發事件的最後屏障。</li>
-            <li><strong>白銀技術面</strong>：白銀突破 $88 關口，呈現出極強的趨勢連續性，工業用銀的緊缺可能引發下一輪的短缺溢價。</li>
-            <li><strong>滯脹防禦</strong>：全球滯脹風險加劇，這對貴金屬構成長期利好。應密切監控實質利率的變動，以校準避險頭寸的權重。</li>
-        </ul>
+        <div class="warning-tag">⚠️ 避險成本預警：高密度蓄能</div>
+        <div style="font-size: 0.85rem; color: #aaa;">
+            建議維運者關注金銀比的微幅擴大。隨著 BTC 2,000 萬枚里程碑達成，實體避險資產可能迎來一次跨域資金的回補潮。
+        </div>
 
         <footer>
-            &copy; 2026 Raybird & TeleNexus AI<br/>
-            System Identity: Precious Metals Intelligence Operator
+            &copy; 2026 Raybird. 實體避險情報由 TeleNexus AI 驅動。
         </footer>
     </div>
-
-    <script>
-        function setFontSize(size) {
-            document.documentElement.setAttribute('data-size', size);
-            localStorage.setItem('prec-font-size', size);
-            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('btn-' + size).classList.add('active');
-        }
-        const savedSize = localStorage.getItem('prec-font-size') || 'medium';
-        setFontSize(savedSize);
-    </script>
 </body>
 </html>
