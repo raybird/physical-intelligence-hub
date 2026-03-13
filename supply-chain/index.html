@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Supply Chain Report - 全球供應鏈與物流公報</title>
+    <title>Supply Chain & Logistics - 全球物流與供應鏈監控</title>
     <style>
         :root {
-            --primary: #00d4ff;
-            --bg: #0a0f1a;
-            --card-bg: #16181d;
-            --text: #ffffff;
+            --primary: #ff453a;
+            --bg: #050505;
+            --card-bg: #111111;
+            --text: #d0d0d0;
+            --accent: #ffffff;
         }
         html[data-size="small"] { font-size: 14px; }
-        html[data-size="medium"] { font-size: 15px; }
+        html[data-size="medium"] { font-size: 16px; }
         html[data-size="large"] { font-size: 18px; }
 
         body {
@@ -21,72 +22,68 @@
             font-family: -apple-system, system-ui, sans-serif;
             margin: 0; padding: 1.5rem; line-height: 1.6;
         }
-        .container { max-width: 600px; margin: 0 auto; }
+        .container { max-width: 650px; margin: 0 auto; }
         header { 
-            border-bottom: 1px solid #333; padding-bottom: 1rem; margin-bottom: 2rem;
+            border-bottom: 2px solid var(--primary); padding-bottom: 1rem; margin-bottom: 2rem;
             display: flex; justify-content: space-between; align-items: center;
         }
-        h1 { color: var(--primary); font-size: 1.2rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        h1 { color: var(--accent); font-size: 1.3rem; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
         
         .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
         .stat-card {
-            background: var(--card-bg); padding: 1.2rem; border-radius: 8px; border: 1px solid #222;
+            background: var(--card-bg); padding: 1.5rem; border-radius: 4px; border: 1px solid #222;
         }
-        .stat-label { font-size: 0.75rem; color: #888; text-transform: uppercase; }
-        .stat-value { font-size: 1.5rem; font-weight: 800; margin: 5px 0; color: #fff; }
-        .stat-change { font-size: 0.8rem; font-weight: 700; color: #ff453a; }
+        .stat-label { font-size: 0.7rem; color: #666; text-transform: uppercase; margin-bottom: 5px; }
+        .stat-value { font-size: 1.8rem; font-weight: 900; color: var(--primary); }
 
-        .analysis-box {
-            background: rgba(0, 212, 255, 0.03); border-left: 4px solid var(--primary);
-            padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2rem;
+        .report-box {
+            background: rgba(255, 69, 58, 0.02); border: 1px solid #222;
+            padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;
         }
-        .analysis-title { font-size: 0.9rem; font-weight: 800; color: var(--primary); margin-bottom: 0.8rem; text-transform: uppercase; }
-        .analysis-content { font-size: 0.95rem; color: #ccc; }
+        .report-title { font-weight: 800; color: #fff; margin-bottom: 1rem; font-size: 1.1rem; }
+        .data-item { font-size: 0.9rem; margin-bottom: 10px; border-bottom: 1px solid #1a1a1a; padding-bottom: 10px; }
+        .data-item strong { color: var(--primary); }
 
-        .warning-tag {
-            background: rgba(255, 69, 58, 0.1); color: #ff453a;
-            padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 1rem;
-        }
-
-        footer { text-align: center; color: #444; font-size: 0.75rem; margin-top: 4rem; }
+        footer { text-align: center; font-size: 0.7rem; color: #444; margin-top: 5rem; }
         .back-link { color: var(--primary); text-decoration: none; font-size: 0.8rem; margin-bottom: 1rem; display: inline-block; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="../" class="back-link">← 返回智庫中心</a>
+        <a href="https://raybird.github.io/telenexus-insight-hub/" class="back-link">← 返回指揮中心</a>
         <header>
-            <h1>SUPPLY CHAIN</h1>
-            <div style="font-size: 0.7rem; color: #666;">最後更新：2026-03-12 09:30 (Taipei)</div>
+            <h1>LOGISTICS & ENERGY</h1>
+            <div style="font-size: 0.7rem; color: #666;">系統時間：2026-03-13 15:30 (Taipei)</div>
         </header>
 
         <div class="stat-grid">
             <div class="stat-card">
-                <div class="stat-label">BDI INDEX</div>
-                <div class="stat-value">2,242</div>
-                <div class="stat-change" style="color: #32d74b;">▲ 風險溢價注入</div>
+                <div class="stat-label">BRENT OIL (USD/BBL)</div>
+                <div class="stat-value">$100.32</div>
+                <div style="font-size: 0.75rem; color: var(--primary); margin-top: 5px;">⚠️ 破百壓力釋放</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">BRENT OIL</div>
-                <div class="stat-value">$98.60</div>
-                <div class="stat-change">▲ 直衝百美元</div>
+                <div class="stat-label">BDI INDEX</div>
+                <div class="stat-value">1919</div>
+                <div style="font-size: 0.75rem; color: #666; margin-top: 5px;">▼ 航運需求震盪</div>
             </div>
         </div>
 
-        <div class="analysis-box">
-            <div class="analysis-title">供應鏈物流通膨審計</div>
-            <div class="analysis-content">
-                【能源大海嘯】布蘭特原油在 3/12 晨間瘋狂衝向 $98.60。中東供應中斷事實已規訓了全球物流成本。BDI 指數大幅反彈至 2,242 點，顯示航運業正將「戰爭風險」與「高燃料成本」直接轉嫁給終端。系統判定，目前處於「二度通膨噴發」的初期相位。物流路徑的受阻將導致未來 48 小時內所有實體商品的庫存成本重置。
+        <div class="report-box">
+            <div class="report-title">實體矩陣週五特報：通膨規訓與都市防禦</div>
+            <div class="data-item">
+                <strong>[能源預警]</strong> 布蘭特原油正式跨越 <strong>$100</strong> 大關。中東局勢惡化引發的供應鏈負熵已全面注入實體成本，物流通膨風險等級提升至「紅色」。
             </div>
-        </div>
-
-        <div class="warning-tag">🚨 物流成本預警：滯脹風險失控</div>
-        <div style="font-size: 0.85rem; color: #aaa;">
-            原油 $95 以上將觸發全行業的「滯後性提價潮」。建議維運者立即鎖定所有在途貨物的物流成本，並增加必需原材料的實體儲備。
+            <div class="data-item">
+                <strong>[都市規訓]</strong> 內政部今日重要定調：台南市政府公告針對 2023-2025 建照之工程，<strong>工期自動延長 4 年</strong>。這是應對實體營建成本失控與缺工的「制度級緩衝」。
+            </div>
+            <div class="data-item">
+                <strong>[避險聯動]</strong> 實體能源的高壓正將資金推向「最終稀缺性」。黃金與 BTC 的對稱性防禦正成為全球流動性的主導邏輯。
+            </div>
         </div>
 
         <footer>
-            &copy; 2026 Raybird. 供應鏈物流情報由 TeleNexus AI 驅動。
+            TELEMETRY_SYNC: 2026-03-13 15:30 | PROTOCOL: PHYSICAL_V1.5
         </footer>
     </div>
 </body>

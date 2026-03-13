@@ -1,8 +1,15 @@
 {
   "project": "physical-intelligence-hub",
   "pillar": "PHYSICAL",
-  "updated_at": "2026-03-12T09:30:00+08:00",
+  "updated_at": "2026-03-13T15:30:00+08:00",
   "history": [
+    {
+      "timestamp": "2026-03-13T15:30:00+08:00",
+      "version": "實體矩陣週五正式報",
+      "oil_price": "$100.32",
+      "gold_price": "$5,118.75",
+      "causal_summary": "原油正式破百 ($100.32) 觸發紅色通膨預警。內政部規訓：台南公告建照工程自動延期4年，建立實體營建緩衝。"
+    },
     {
       "timestamp": "2026-03-12T09:30:00+08:00",
       "version": "實體避險正式報",
