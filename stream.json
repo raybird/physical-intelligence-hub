@@ -1,21 +1,22 @@
 {
   "project": "physical-intelligence-hub",
   "pillar": "PHYSICAL",
-  "updated_at": "2026-03-13T15:30:00+08:00",
+  "updated_at": "2026-03-13T16:00:00+08:00",
   "history": [
+    {
+      "timestamp": "2026-03-13T16:00:00+08:00",
+      "version": "RWA 主權溢價初報",
+      "oil_price": "$100.32",
+      "gold_price": "$5,118.75",
+      "sovereignty_premium": "+12.5%",
+      "causal_summary": "受原油破百與台南建築工期規訓影響，實體資產的『制度安全係數』提升。系統推演 RWA 主權溢價為 12.5%，反映了規訓後的實體生產力防禦力。"
+    },
     {
       "timestamp": "2026-03-13T15:30:00+08:00",
       "version": "實體矩陣週五正式報",
       "oil_price": "$100.32",
       "gold_price": "$5,118.75",
       "causal_summary": "原油正式破百 ($100.32) 觸發紅色通膨預警。內政部規訓：台南公告建照工程自動延期4年，建立實體營建緩衝。"
-    },
-    {
-      "timestamp": "2026-03-12T09:30:00+08:00",
-      "version": "實體避險正式報",
-      "oil_price": "$98.60",
-      "gold_price": "$5,175.50",
-      "causal_summary": "布蘭特原油衝擊百美元關口，實體物流成本預警。黃金衝向 $5,175，與數位稀缺達成避險對稱。"
     }
   ]
 }
