@@ -1,8 +1,16 @@
 {
   "project": "physical-intelligence-hub",
   "pillar": "PHYSICAL",
-  "updated_at": "2026-03-14T09:30:00+08:00",
+  "updated_at": "2026-03-14T14:00:00+08:00",
   "history": [
+    {
+      "timestamp": "2026-03-14T14:00:00+08:00",
+      "version": "午後實體彈道報",
+      "oil_price": "$101.64",
+      "gold_price": "$5,023.00",
+      "bdi_index": "2028",
+      "causal_summary": "布蘭特原油穩於 $101，能源主權規訓事實確立。BDI 指數攀升至 2,028 點，反映物流航運燃油附加費的「負熵轉嫁」已完成。貴金屬持續流動性排毒，資金向雙極避險架構深處轉移。RWA 實體溢價因子維持在 13.5%。"
+    },
     {
       "timestamp": "2026-03-14T09:30:00+08:00",
       "version": "週末實體規訓報",
