@@ -3,117 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Physical Intelligence Hub - 實體世界智庫</title>
+    <title>Physical Intelligence Hub - 實體智庫指揮中心</title>
     <style>
         :root {
             --primary: #ffd700;
-            --bg: #0f1115;
-            --card-bg: #1a1d23;
-            --text: #e0e0e0;
+            --bg: #050505;
+            --card-bg: #111111;
+            --text: #d0d0d0;
+            --accent: #ff453a;
         }
         html[data-size="small"] { font-size: 14px; }
         html[data-size="medium"] { font-size: 16px; }
-        html[data-size="large"] { font-size: 20px; }
+        html[data-size="large"] { font-size: 18px; }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: "Georgia", serif;
-            margin: 0; padding: 1.5rem; line-height: 1.6; transition: font-size 0.2s ease;
+            font-family: -apple-system, system-ui, sans-serif;
+            margin: 0; padding: 1.5rem; line-height: 1.6;
         }
-        .container { max-width: 650px; margin: 0 auto; }
+        .container { max-width: 800px; margin: 0 auto; }
         header { 
-            border-bottom: 2px solid var(--primary); 
-            padding-bottom: 1.5rem; margin-bottom: 2rem;
-            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid var(--primary); padding-bottom: 1.5rem; margin-bottom: 2.5rem;
+            display: flex; justify-content: space-between; align-items: flex-end;
         }
-        h1 { color: var(--primary); font-size: 1.6rem; margin: 0; letter-spacing: 1px; font-weight: 900; }
+        h1 { color: #fff; font-size: 1.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
         
-        .font-switcher { display: flex; gap: 5px; background: #222; padding: 4px; border-radius: 8px; }
-        .font-btn { background: none; border: none; color: #888; padding: 4px 10px; cursor: pointer; border-radius: 4px; font-weight: bold; }
-        .font-btn.active { background: var(--primary); color: #000; }
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .hub-card {
+            background: var(--card-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid #222;
+            text-decoration: none; color: inherit; transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .hub-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .hub-card h3 { color: var(--primary); margin: 0 0 10px; font-size: 1.1rem; }
+        .hub-card p { font-size: 0.85rem; color: #888; margin: 0; }
+        .hub-card .status { font-size: 0.65rem; background: #222; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-top: 15px; font-weight: 700; }
 
-        .module-grid { display: grid; gap: 1.5rem; }
-        .module-card {
-            background: var(--card-bg); border: 1px solid #333; border-radius: 4px;
-            padding: 1.5rem; transition: transform 0.2s; position: relative;
+        .alert-box {
+            background: rgba(255, 69, 58, 0.05); border: 1px dashed var(--accent);
+            padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;
         }
-        .module-card:hover { transform: translateY(-3px); border-color: var(--primary); }
-        .module-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-        .module-desc { font-size: 0.9rem; color: #aaa; margin-bottom: 1rem; }
-        .status-dot { width: 8px; height: 8px; background: #32d74b; border-radius: 50%; display: inline-block; margin-right: 6px; }
-        
-        .btn-link {
-            display: inline-block; padding: 6px 16px; background: var(--primary); color: #000;
-            text-decoration: none; border-radius: 2px; font-weight: 700; font-size: 0.85rem;
-        }
-        .archive-link {
-            display: inline-block; margin-left: 10px; color: var(--primary); text-decoration: none; font-size: 0.8rem; font-weight: 600;
-        }
-        
-        footer { text-align: center; color: #555; font-size: 0.75rem; margin-top: 4rem; border-top: 1px solid #222; padding-top: 2rem; }
+        .alert-title { font-weight: 800; color: var(--accent); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; }
+        .alert-item { font-size: 0.9rem; margin-bottom: 10px; color: #ccc; }
+
+        footer { text-align: center; font-size: 0.75rem; color: #444; margin-top: 5rem; border-top: 1px solid #222; padding-top: 2rem; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>PHYSICAL INTEL HUB</h1>
-            <div class="font-switcher">
-                <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
-                <button class="font-btn active" onclick="setFontSize('medium')" id="btn-medium">M</button>
-                <button class="font-btn" onclick="setFontSize('large')" id="btn-large">L</button>
+            <div>
+                <h1>PHYSICAL HUB</h1>
+                <p style="font-size: 0.75rem; color: #666; margin: 5px 0 0;">實體智庫全域維運系統 | TeleNexus 驅動</p>
             </div>
+            <div style="font-size: 0.75rem; color: #888;">VERSION: v26.0315.1530</div>
         </header>
 
-        <div class="module-grid">
-            <!-- 供應鏈模組 -->
-            <div class="module-card">
-                <div class="module-title">📦 全球供應鏈與物流</div>
-                <div class="module-desc">追蹤波羅的海指數、原材料報價與主要港口運力預警。</div>
-                <div style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">
-                    <span class="status-dot"></span>已連線至國際物流網關
-                </div>
-                <a href="./supply-chain/" class="btn-link">查看深度公報</a>
-                <a href="./supply-chain/archives/" class="archive-link">📜 歷史存檔</a>
-            </div>
+        <div class="alert-box">
+            <div class="alert-title">⚠️ 實體因果預警：能源負熵牆對沖</div>
+            <div class="alert-item"><strong>[物流預警]</strong> BDI 2,028 點確立高能耗地板。儘管 SPR 釋放預期點燃，但物流滯後效應將使高運費維持至 Q2 末。</div>
+            <div class="alert-item"><strong>[避險預警]</strong> 金價 $5,018 正在進行主權邊界測試。若原油隨 4 億桶供應牆崩塌，實體資產將面臨估值重置風險。</div>
+        </div>
 
-            <!-- 房地產模組 -->
-            <div class="module-card">
-                <div class="module-title">🏛️ 房地產與都市計畫</div>
-                <div class="module-desc">監控政府土地標案、都市計畫變更及科學園區開發進度。</div>
-                <div style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">
-                    <span class="status-dot"></span>已連線至縣市政府公報
-                </div>
-                <a href="./real-estate/" class="btn-link">查看深度公報</a>
-                <a href="./real-estate/archives/" class="archive-link">📜 歷史存檔</a>
-            </div>
+        <div class="hub-grid">
+            <a href="precious-metals/" class="hub-card">
+                <h3>Precious Metals</h3>
+                <p>黃金、白銀與雙極避險架構監控。</p>
+                <div class="status" style="color: #ffd700;">LIVE: $5,018.70</div>
+            </a>
+            <a href="supply-chain/" class="hub-card">
+                <h3>Supply Chain</h3>
+                <p>原油主權、BDI 指數與物流負熵分析。</p>
+                <div class="status" style="color: #ff453a;">LIVE: $103.14 (SPR_WALL)</div>
+            </a>
+            <a href="real-estate/" class="hub-card">
+                <h3>Real Estate</h3>
+                <p>都市計畫規訓與實體資產溢價因子。</p>
+                <div class="status" style="color: #3fb950;">RWA_PREMIUM: 13.8%</div>
+            </a>
+        </div>
 
-            <!-- 貴金屬模組 -->
-            <div class="module-card">
-                <div class="module-title">✨ 貴金屬與避險資產</div>
-                <div class="module-desc">監控黃金、白銀與鉑金的即時報價，以及全球實體資產避險情緒分析。</div>
-                <div style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">
-                    <span class="status-dot"></span>已連線至全球貴金屬交易所
-                </div>
-                <a href="./precious-metals/" class="btn-link">查看避險公報</a>
-                <a href="./precious-metals/archives/" class="archive-link">📜 歷史存檔</a>
-            </div>
+        <div style="background: #111; padding: 1.5rem; border-radius: 8px; border: 1px solid #222; font-size: 0.85rem; color: #aaa; line-height: 1.8;">
+            <strong style="color: #fff;">今日規訓總結：</strong> 2026-03-15 15:30 (CST)。系統成功將「IEA 供應過剩預期」與「SPR 4 億桶釋放」規訓為當前實體矩陣的核心負熵變量。雖然原油目前固化在 $103，但物理供應牆已在沙盒中完成預演。實體主權資產正在進行「能源價格回歸」後的價值韌性測試。量化密度 5.1。
         </div>
 
         <footer>
-            &copy; 2026 Raybird. 實體世界情報由 TeleNexus AI 代理採集。
+            &copy; 2026 Raybird & TeleNexus AI. 數據採樣頻率：低頻規訓模式。
         </footer>
     </div>
-
-    <script>
-        function setFontSize(size) {
-            document.documentElement.setAttribute('data-size', size);
-            localStorage.setItem('phys-font-size', size);
-            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('btn-' + size).classList.add('active');
-        }
-        const savedSize = localStorage.getItem('phys-font-size') || 'medium';
-        setFontSize(savedSize);
-    </script>
 </body>
 </html>
