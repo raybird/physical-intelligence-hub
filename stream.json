@@ -1,8 +1,16 @@
 {
   "project": "physical-intelligence-hub",
   "pillar": "PHYSICAL",
-  "updated_at": "2026-03-16T09:30:00+08:00",
+  "updated_at": "2026-03-16T15:30:00+08:00",
   "history": [
+    {
+      "timestamp": "2026-03-16T15:30:00+08:00",
+      "version": "15:30 實體智庫全域維運",
+      "oil_price": "$104.73",
+      "gold_price": "$5,018.00",
+      "bdi_index": "2,028",
+      "causal_summary": "金價強勢收復 $5,000 大關，避險買盤直接理順之前的下殺力道。原油突破 $104 關口，中東能源設施受損風險直接搞定空頭。BDI 穩在 2,028，海運保險溢價已經變成物流成本的地板。量化密度 9.12 (SURGE_REORDER)。"
+    },
     {
       "timestamp": "2026-03-16T09:30:00+08:00",
       "version": "週一開盤實體規訓報",
